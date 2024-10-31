@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 98vh;
+  background-color: rgba(0, 0, 0, 0.905);
+  color: white;
+  font-family: "Nunito", serif;
+}
+.container {
+  /* Main container */
+  margin: 0 auto;
+  width: 33em;
+  height: 42em;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(21, 18, 18);
+  box-shadow: 0px 0px 15px rgba(251, 250, 250, 0.486);
+  border-radius: 1em;
+  text-align: center;
+}
+.upperText {
+  /*Game name and mode*/
+  height: 5em;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainBox {
+  /*Main box of the game*/
+  width: 80%;
+  height: auto;
+  padding: 1em 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.905);
+  box-shadow: 0px 0px 10px white;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainBoxText {
+  /* Main box text - level and score */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.levelScore {
+  /*score*/
+  color: grey;
+}
+.letters {
+  /*container of the letters*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 70%;
+  height: auto;
+  margin: 1em 0;
+}
+.box {
+  /*Each divs of letter*/
+  box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.653);
+  width: 4em;
+  height: 3em;
+  font-size: 1.1em;
+  margin: 0.5em;
+  align-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.282);
+  border-radius: 0.3em;
+}
+.userGuess {
+  /*input box and hint btn*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+  height: 3em;
+  margin-bottom: 1em;
+}
+.guess {
+  /*Input Box*/
+  width: 9em;
+  height: 1.5em;
+  padding: 0 0.5em;
+  background-color: rgba(0, 0, 0, 0.905);
+  border: 1px solid rgba(255, 255, 255, 0.384);
+  border-radius: 0.2em;
+  color: whitesmoke;
+  font-size: 1.5em;
+  text-align: center;
+  align-content: center;
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.299);
+    font-size: 0.7em;
+  }
+}
+.hint {
+  /*hint Btn*/
+  width: 4em;
+  height: 2.5em;
+  border-radius: 0.3em;
+  color: white;
+  background-color: rgba(20, 20, 20, 0.905);
+  border: 1px solid rgba(255, 255, 255, 0.104);
+  cursor: pointer;
+  transition: all 0.1s linear;
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.437);
+  }
+}
+.errorCon {
+  /*match btn and error msgs*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 20em;
+  height: 5em;
+  /* margin-bottom: 2em; */
+}
+.errorBtns {
+  /*match btn container*/
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.rightError {
+  /*Right Error*/
+  color: yellow;
+}
+.wrongError {
+  /*Wrong Error*/
+  color: red;
+}
+.match {
+  /*Match Btn */
+  background-color: rgb(1, 94, 1);
+  border: 2px solid rgb(1, 94, 1);
+  border-radius: 0.5em;
+  color: rgb(255, 241, 241);
+  width: 8em;
+  height: 3em;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.905);
+    border: 2px solid white;
+    color: white;
+  }
+}
+.quit {
+  /*Quit Btn*/
+  background-color: rgb(255, 17, 0);
+  border: 2px solid rgb(255, 17, 0);
+  border-radius: 0.5em;
+  color: rgb(255, 241, 241);
+  width: 8em;
+  height: 3em;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.905);
+    border: 2px solid white;
+    color: white;
+  }
+}
+.nextBtn {
+  /*Next button*/
+  background-color: rgb(209, 18, 18);
+  border: 2px solid rgb(209, 18, 18);
+  color: white;
+  border-radius: 0.7em;
+  width: 8em;
+  height: 3.1em;
+  cursor: pointer;
+  margin: 1em 1em 0em 1em;
+  transition: all 0.1s linear;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.905);
+    border: 2px solid white;
+    color: white;
+  }
+}
+.newNextBtn,
+.quitShadow {
+  /*Animation for highlighting the buttons */
+  animation: nextBtnAnima 0.8s linear infinite;
+}
+@keyframes nextBtnAnima {
+  from {
+    box-shadow: 0px 0px 0px white;
+    border: 2px solid rgb(209, 18, 18);
+  }
+  to {
+    box-shadow: 0px 0px 10px white;
+    border: 1px solid white;
+  }
+}
+.restartBtn {
+  /*restart button*/
+  background-color: rgb(11, 11, 182);
+  border: 2px solid rgb(11, 11, 182);
+  color: white;
+  border-radius: 0.7em;
+  width: 8em;
+  height: 3.1em;
+  cursor: pointer;
+  margin: 1em 1em 0em 1em;
+  transition: all 0.1s linear;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.905);
+    border: 2px solid white;
+    color: white;
+  }
+}
+.ruleMsg {
+  /*Bottom rule note*/
+  color: grey;
+  font-size: 0.8em;
+}
+
+/*Code for responsiveness*/
+@media screen and ((orientation: portrait)) {
+  body {
+    font-size: 0.8em;
+  }
+  .container{
+    height: 46em;
+  }
+  .guess {
+    margin-right: 0.3em;
+  }
+  .Btn {
+    font-size: 1em;
+  }
+  .hint {
+    font-size: 1em;
+  }
+}
+@media screen and (width < 500px) {
+  body {
+    font-size: 0.6em;
+  }
+  .guess {
+    font-size: 1.3em;
+  }
+}
+@media screen and (width < 380px) {
+  body {
+    font-size: 0.4em;
+  }
+  .guess {
+    font-size: 1.3em;
+  }
+}
+@media screen and (height <= 700px) {
+  body {
+    font-size: 0.8em;
+  }
+}

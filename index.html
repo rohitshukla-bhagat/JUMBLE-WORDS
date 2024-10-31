@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jumble Words</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="upperText">
+        <h1 class="gameName">JUMBLE WORDS</h1>
+        <p class="mode"></p>
+      </div>
+      <div class="mainBox">
+        <div class="mainBoxText">
+        <p class="level"></p>
+        <p class="levelScore"></p> 
+      </div>
+        <div class="letters"> <!-- Letters will be added by the JavaScript-->
+        </div>
+        <div class="userGuess">
+          <input type="text" class="guess" placeholder="Guess The Word" />
+        </div>
+        <div class="errorCon">
+          <div class="errorBtns">
+            <button class="match Btn">Match</button> <!--Match will be replaced by 'Quit' when the player perform all 5 chances -->
+          </div>
+        </div>
+      </div>
+      <div class="bottomBtn"> <!--A button 'Next Round' will be added when the player gussed right ! -->
+        <button class="restartBtn Btn">Restart Game</button>
+      </div>
+      <p class="ruleMsg">Note : You Have 5 Chances For Each Round !</p>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

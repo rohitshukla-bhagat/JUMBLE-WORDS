@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumble Words</title>
+    <style>
+        /*Styling For The Element*/
+        @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(14, 14, 14);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: "Nunito", serif;
+        }
+        .mainCont{
+            text-align: center;
+        }
+        .score{
+            margin-top: 1em;
+        }
+        .playAgain{
+            margin-top: 2em;
+            width: 8em;
+            height: 2.5em;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
+            border-radius: 1em;
+            border: 2px solid orangered;
+            background-color: orangered;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            &:hover{
+                background-color: rgb(14, 14, 14);
+                color: white;
+            }
+        }
+        @media screen and (orientation : portrait) {
+            .congratesText{
+                font-size: 1em;
+            }
+            .playAgain{
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mainCont">
+        <h1 class="congratesText">Congratulations 🎉 You Win The Game 😊 !</h1>
+        <p class="score">Your Score : <span></span></p>
+        <button class="playAgain">Play Again</button> <!--Play again btn for playing the game again-->
+    </div>
+    </div>
+    <script>
+        // Simple basic event logic on play again button for redirecting to the main game html file
+        const audio = new Audio("public/celebratessound.wav");
+        audio.play();
+        document.querySelector(".playAgain").addEventListener("click" , () => {
+            localStorage.setItem("wordsMatterScore", JSON.stringify(0)); // score will be 0 after playing the game from beginning 
+            location.href = "index.html";
+        });
+        // Showing the score using the local storage 
+        const score = document.querySelector(".score");
+        const scoreLS = JSON.parse(localStorage.getItem("wordsMatterScore"));
+        score.firstElementChild.innerText = scoreLS;
+    </script>
+</body>
+</html>
